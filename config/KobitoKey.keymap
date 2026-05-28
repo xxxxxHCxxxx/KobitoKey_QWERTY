@@ -74,8 +74,6 @@
 &kp LSHFT  &trans  &kp LCMD  &kp LALT  &to 0   &trans  &trans    &trans    &to 0     &kp RALT
             >;
         };
-    };
-};
 
         layer4 {
             label = "LAYER4";
@@ -106,4 +104,6 @@
 &trans  &trans  &trans  &trans  &to 0   &trans  &trans  &trans  &to 0   &trans
             >;
         };
-
+    };
+};
+j
