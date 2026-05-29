@@ -10,9 +10,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <120>;
+            tapping-term-ms = <170>;
             require-prior-idle-ms = <100>;
-            hold-while-undecided;
             bindings = <&mo>, <&kp>;
             display-name = "U Scroll";
         };
