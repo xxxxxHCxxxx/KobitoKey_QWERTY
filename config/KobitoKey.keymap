@@ -9,8 +9,10 @@
         u_scroll: u_scroll {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <150>;
+            flavor = "balanced";
+            tapping-term-ms = <120>;
+            require-prior-idle-ms = <100>;
+            hold-while-undecided;
             bindings = <&mo>, <&kp>;
             display-name = "U Scroll";
         };
