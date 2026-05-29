@@ -59,6 +59,24 @@
         status = "okay";
         rotation-angle = <24>;
     };
+
+    input_processors {
+        zip_wheel_scaler: zip_wheel_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL>;
+            track-remainders;
+        };
+
+        zip_hwheel_scaler: zip_hwheel_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+    };
 };
 
 &tb_left_listener {
@@ -87,7 +105,10 @@
 
     scroll_mode {
         layers = <4>;
-        input-processors = <&zip_xy_to_scroll_mapper>;
+        input-processors =
+            <&zip_xy_to_scroll_mapper>,
+            <&zip_wheel_scaler 1 2>,
+            <&zip_hwheel_scaler 1 2>;
         process-next;
     };
 
@@ -115,5 +136,3 @@
         39
     >;
 };
-
-
